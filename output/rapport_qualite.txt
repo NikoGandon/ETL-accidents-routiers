@@ -1,0 +1,43 @@
+================================================================
+  RAPPORT QUALITÉ — Accidents corporels 2024 (BAAC/ONISR)
+================================================================
+
+ENTRÉE (données brutes)
+----------------------------------------------------------------
+  caract          54402 lignes | 15 col. | manquants masqués :  0.28 %
+  lieux           70248 lignes | 18 col. | manquants masqués : 22.48 %
+  vehicules       92678 lignes | 11 col. | manquants masqués :  9.04 %
+  usagers        125187 lignes | 16 col. | manquants masqués : 20.72 %
+  TOTAL          342515 lignes réparties sur 4 fichiers
+
+OPÉRATIONS DE NETTOYAGE
+----------------------------------------------------------------
+  - séparateur ';' + guillemets gérés
+  - décimales françaises (lat/long, largeurs) converties en float
+  - identifiants : espaces de milliers supprimés (jointures fiables)
+  - 3 formes de manquants ('-1', '', 'N/A') -> vrais NaN
+  - 30 variables codées décodées en libellés lisibles
+  - doublons retires vehicules : 0
+  - doublons retires caract : 0
+  - doublons retires lieux : 15846
+
+SORTIE (table consolidée)
+----------------------------------------------------------------
+  grain                : 1 ligne / usager
+  lignes               : 125187
+  colonnes             : 85
+  intégrité jointure   : OK
+
+  Top colonnes les plus incomplètes (après nettoyage) :
+    lartpc              99.93 % manquants
+    occutc              98.24 % manquants
+    etatp_lib           91.81 % manquants
+    etatp               91.81 % manquants
+    secu3               90.37 % manquants
+    secu3_lib           90.37 % manquants
+    v2                  89.48 % manquants
+    larrout              63.1 % manquants
+
+================================================================
+  4 fichiers bruts hétérogènes  ->  1 table propre, typée, lisible
+================================================================
